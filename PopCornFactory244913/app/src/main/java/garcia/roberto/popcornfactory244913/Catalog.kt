@@ -17,7 +17,7 @@ import androidx.core.view.WindowInsetsCompat
 import java.util.ArrayList
 
 class Catalog : AppCompatActivity() {
-    var adapter: PeliculaAdapter? = null
+    var adapter: MovieAdapter? = null
     var movies = ArrayList<Movie>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,14 +30,14 @@ class Catalog : AppCompatActivity() {
             insets
         }
 
-        cargarPeliculas()
+        cargarMovies()
 
-        adapter = PeliculaAdapter(this, movies)
+        adapter = MovieAdapter(this, movies)
         val moviesCatalog: GridView = findViewById(R.id.movies_catalog)
         moviesCatalog.adapter = adapter
     }
 
-    fun cargarPeliculas() {
+    fun cargarMovies() {
         movies.add(
             Movie(
                 "Bones",
@@ -120,6 +120,48 @@ class Catalog : AppCompatActivity() {
                 "Rachel Green, Ross Geller, Monica Geller, Joey Tribbiani, Chandler Bing and Phoebe Buffay are six 20 something year-olds, living off of one another in the heart of New York City. Over the course of ten years, this average group of buddies goes through massive mayhem, family trouble, past and future romances, fights, laughs, tears and surprises as they learn what it really means to be a friend."
             )
         )
+        
+
+        movies.add(
+            Movie(
+                "Fantastic beasts",
+                R.drawable.fantasticbeasts,
+                R.drawable.fantasticbeastsheader,
+                "In 1926, British wizard and \"magizoologist\" Newton \"Newt\" Scamander arrives in New York City. He encounters Mary Lou Barebone, the non-magical (\"No-Maj\" or \"Muggle\") head of the New Salem Philanthropic Society, who preaches that witches and wizards are real and dangerous. Attempting to recapture a Niffler that escaped from his suitcase of magical creatures, Newt meets No-Maj Jacob Kowalski, an aspiring baker, and they unwittingly swap suitcases. ",
+            )
+        )
+        movies.add(
+            Movie(
+                "The Aeronauts",
+                R.drawable.aeronauts,
+                R.drawable.aeronautsheader,
+                "In 1862 London, scientist James Glaisher and his pilot Amelia arrive for the launch of the largest balloon ever constructed. Despite being haunted by a vision of her late husband Pierre, Amelia keeps up the brave front and the balloon successfully launches to a cheering crowd. In a flashback, James appears before the Royal Society and explains his theory that the weather can be predicted, but his fellow scientists mock him and refuse to finance his studies. Returning home, he talks to his parents, who try to persuade him to pursue another avenue of science. On the balloon, James and Amelia start rising through the cloud layer.",
+            )
+        )
+        movies.add(
+            Movie(
+                "Spiderman into the spiderverse",
+                R.drawable.spiderverse,
+                R.drawable.spiderverseheader,
+                "Miles Morales, a teenager who admires Spider-Man, struggles living up to the expectations of his parents, especially his father, police officer Jefferson Davis, who sees Spider-Man as a menace. After school, Miles secretly visits his uncle Aaron Davis, who brings Miles to an abandoned subway station where he can paint graffiti. While there, Miles is unknowingly bitten by a radioactive spider and, the next day, discovers it gave him spider-like abilities, including the power to turn invisible, and to emit electric venom blasts.",
+            )
+        )
+        movies.add(
+            Movie(
+                "1917",
+                R.drawable.nineteenseventeen,
+                R.drawable.nineteenseventeenheader,
+                "On 6 April 1917, aerial reconnaissance has observed that the German army, which has pulled back from a sector of the Western Front in northern France, is not in retreat but has made a strategic withdrawal to the new Hindenburg Line, where they are waiting to overwhelm the British with artillery.",
+            )
+        )
+        movies.add(
+            Movie(
+                "Harry Potter",
+                R.drawable.harrypotter,
+                R.drawable.harrypotterheader,
+                "Late one night, Albus Dumbledore and Minerva McGonagall, professors at Hogwarts School of Witchcraft and Wizardry, along with the schools groundskeeper Rubeus Hagrid, deliver a recently orphaned infant named Harry Potter to his only remaining relatives, the Dursleys. Ten years later Harry has lived a difficult life with the Dursleys.After inadvertently causing an accident during a family trip to London Zoo, Harry begins receiving unsolicited letters by owls.After he and the Dursleys escape to an island to avoid more letters, Hagrid re -appears and informs Harry that he is a wizard and has been accepted into Hogwarts against the Dursleys wishes. After taking Harry to Diagon Alley to buy his supplies for Hogwarts and a pet owl named Hedwig as a birthday present, Hagrid informs him of his past: Harry s parents James and Lily Potter died due to a Killing Curse at the hands of the malevolent and all - powerful wizard : Lord Voldemort.Harry, the only survivor in the chaos, thus becomes well - known in the wizarding world as The Boy Who Lived"
+            )
+        )
 
     }
 
@@ -127,7 +169,7 @@ class Catalog : AppCompatActivity() {
 }
 
 
-class PeliculaAdapter(context: Context, var movies: ArrayList<Movie>) : BaseAdapter() {
+class MovieAdapter(context: Context, var movies: ArrayList<Movie>) : BaseAdapter() {
     var context: Context? = context
 
     override fun getCount(): Int {
