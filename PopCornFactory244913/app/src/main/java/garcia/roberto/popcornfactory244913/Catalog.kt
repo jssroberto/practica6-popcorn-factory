@@ -147,6 +147,7 @@ class PeliculaAdapter(context: Context, var movies: ArrayList<Movie>) : BaseAdap
         var inflator = context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         var vista = inflator.inflate(R.layout.cell_movie, null)
 
+
         var image: ImageView = vista.findViewById(R.id.img_pelicula)
         var titulo: TextView = vista.findViewById(R.id.txt_titulo)
 
@@ -159,6 +160,8 @@ class PeliculaAdapter(context: Context, var movies: ArrayList<Movie>) : BaseAdap
             intent.putExtra("image", pelicula.image)
             intent.putExtra("header", pelicula.header)
             intent.putExtra("sinopsis", pelicula.sinopsis)
+            intent.putExtra("numSeats", 20 - pelicula.seats.size)
+            intent.putExtra("position", position)
             context!!.startActivity(intent)
         }
         return vista
